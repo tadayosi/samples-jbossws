@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.redhat.samples</groupId>
+    <artifactId>samples-jbossws</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>basic-contract-first</artifactId>
+  <packaging>war</packaging>
+
+  <build>
+    <plugins>
+      <!-- build -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/wsconsume/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jboss.ws.plugins</groupId>
+        <artifactId>maven-jaxws-tools-plugin</artifactId>
+        <version>1.0.0.GA</version>
+        <configuration>
+          <wsdls>
+            <wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/greeting.wsdl</wsdl>
+          </wsdls>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsconsume</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+        </dependencies>
+      </plugin>
+      <!-- package -->
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-client</artifactId>
+      <version>3.2.2.GA</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+</project>
