@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="xsd-import" soapui-version="4.5.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  
+  <con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="GreetingServiceSoapBinding" type="wsdl" bindingName="{http://xsd_import.ws.samples.redhat.com/}GreetingServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8080/xsd-import/greeting?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8080/xsd-import/greeting?wsdl"><con:part><con:url>http://127.0.0.1:8080/xsd-import/greeting?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GreetingService" targetNamespace="http://xsd_import.ws.samples.redhat.com/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xsd_import.ws.samples.redhat.com/" xmlns:types="http://xsd_import.ws.samples.redhat.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://xsd_import.ws.samples.redhat.com/types" schemaLocation="http://127.0.0.1:8080/xsd-import/greeting?xsd=greeting.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="goodbye">
+    <wsdl:part element="types:goodbye" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="helloResponse">
+    <wsdl:part element="types:helloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="goodbyeResponse">
+    <wsdl:part element="types:goodbyeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hello">
+    <wsdl:part element="types:hello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GreetingService">
+    <wsdl:operation name="goodbye">
+      <wsdl:input message="tns:goodbye" name="goodbye"></wsdl:input>
+      <wsdl:output message="tns:goodbyeResponse" name="goodbyeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <wsdl:input message="tns:hello" name="hello"></wsdl:input>
+      <wsdl:output message="tns:helloResponse" name="helloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GreetingServiceSoapBinding" type="tns:GreetingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="goodbye">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="goodbye">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="goodbyeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="helloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GreetingService">
+    <wsdl:port binding="tns:GreetingServiceSoapBinding" name="GreetingServicePort">
+      <soap:address location="http://127.0.0.1:8080/xsd-import/greeting"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://127.0.0.1:8080/xsd-import/greeting?xsd=greeting.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://xsd_import.ws.samples.redhat.com/types" version="1.0" xmlns:types="http://xsd_import.ws.samples.redhat.com/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="goodbye" type="types:goodbye"/>
+  <xs:element name="goodbyeResponse" type="types:goodbyeResponse"/>
+  <xs:element name="hello" type="types:hello"/>
+  <xs:element name="helloResponse" type="types:helloResponse"/>
+  <xs:complexType name="goodbye">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="goodbyeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8080/xsd-import/greeting</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="goodbye" bindingOperationName="goodbye" type="Request-Response" outputName="goodbyeResponse" inputName="goodbye" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/xsd-import/greeting</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xsd_import.ws.samples.redhat.com/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:goodbye>
+         <!--Optional:-->
+         <name>soapUI</name>
+      </typ:goodbye>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://xsd_import.ws.samples.redhat.com/GreetingService/goodbye"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="hello" bindingOperationName="hello" type="Request-Response" outputName="helloResponse" inputName="hello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/xsd-import/greeting</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xsd_import.ws.samples.redhat.com/types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:hello>
+         <!--Optional:-->
+         <name>soapUI</name>
+      </typ:hello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://xsd_import.ws.samples.redhat.com/GreetingService/hello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/>
+  <con:wssContainer/>
+</con:soapui-project>
