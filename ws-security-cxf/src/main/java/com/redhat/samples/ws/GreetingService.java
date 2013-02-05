@@ -1,6 +1,5 @@
 package com.redhat.samples.ws;
 
-import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -9,7 +8,6 @@ import javax.xml.ws.Endpoint;
 import org.apache.log4j.Logger;
 
 @WebService
-@HandlerChain(file = "/META-INF/handler-chain.xml")
 public class GreetingService {
   private static final Logger LOGGER = Logger.getLogger(GreetingService.class);
 
