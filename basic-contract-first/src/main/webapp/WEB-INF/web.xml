@@ -4,7 +4,7 @@
 
   <servlet>
     <servlet-name>Greeting</servlet-name>
-    <servlet-class>com.redhat.samples.ws.basic_contract_first.GreetingServiceImpl</servlet-class>
+    <servlet-class>com.redhat.samples.ws.GreetingServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>

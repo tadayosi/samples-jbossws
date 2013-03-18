@@ -13,7 +13,6 @@
   <packaging>war</packaging>
 
   <build>
-    <finalName>xsd-import</finalName>
     <plugins>
       <!-- build -->
       <plugin>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GreetingService" targetNamespace="http://xsd_import.ws.samples.redhat.com/"
-  xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xsd_import.ws.samples.redhat.com/"
-  xmlns:types="http://xsd_import.ws.samples.redhat.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="GreetingService" targetNamespace="http://ws.samples.redhat.com/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.samples.redhat.com/" xmlns:types="http://ws.samples.redhat.com/types"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:import namespace="http://xsd_import.ws.samples.redhat.com/types" schemaLocation="greeting.xsd" />
+      <xs:import namespace="http://ws.samples.redhat.com/types" schemaLocation="greeting.xsd" />
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="hello">
@@ -52,7 +52,7 @@
   </wsdl:binding>
   <wsdl:service name="GreetingService">
     <wsdl:port binding="tns:GreetingServiceSoapBinding" name="GreetingServicePort">
-      <soap:address location="http://localhost:8080/xsd-import/greeting" />
+      <soap:address location="http://localhost:8080/sample/greeting" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

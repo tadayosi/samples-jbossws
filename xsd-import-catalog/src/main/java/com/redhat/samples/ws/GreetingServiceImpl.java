@@ -1,4 +1,4 @@
-package com.redhat.samples.ws.basic;
+package com.redhat.samples.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -7,9 +7,12 @@ import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
 
-@WebService
-public class GreetingService {
-  private static final Logger LOGGER = Logger.getLogger(GreetingService.class);
+@WebService(
+    serviceName = "GreetingService",
+    portName = "GreetingServicePort",
+    wsdlLocation = "/WEB-INF/wsdl/greeting.wsdl")
+public class GreetingServiceImpl implements GreetingService {
+  private static final Logger LOGGER = Logger.getLogger(GreetingServiceImpl.class);
 
   @WebMethod
   public String hello(@WebParam(name = "name") String name) {
@@ -27,7 +30,7 @@ public class GreetingService {
 
   public static void main(String[] args) {
     try {
-      Endpoint.publish("http://localhost:18080/greeting", new GreetingService());
+      Endpoint.publish("http://localhost:18080/greeting", new GreetingServiceImpl());
     } catch (Throwable t) {
       t.printStackTrace();
       System.exit(1);
