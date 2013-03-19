@@ -6,5 +6,9 @@
       <handler-name>SampleHandler</handler-name>
       <handler-class>com.redhat.samples.ws.SampleHandler</handler-class>
     </handler>
+    <handler>
+      <handler-name>HttpHeadersHandler</handler-name>
+      <handler-class>com.redhat.samples.ws.HttpHeadersHandler</handler-class>
+    </handler>
   </handler-chain>
 </handler-chains>
