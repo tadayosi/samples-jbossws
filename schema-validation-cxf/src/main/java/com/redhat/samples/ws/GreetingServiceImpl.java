@@ -8,7 +8,10 @@ import javax.xml.ws.Endpoint;
 import org.apache.cxf.annotations.SchemaValidation;
 import org.apache.log4j.Logger;
 
-@WebService(serviceName = "GreetingService", portName = "GreetingServicePort", wsdlLocation = "/WEB-INF/wsdl/greeting.wsdl")
+@WebService(
+    serviceName = "GreetingService",
+    portName = "GreetingServicePort",
+    wsdlLocation = "classpath:/META-INF/greeting.wsdl")
 @SchemaValidation
 public class GreetingServiceImpl implements GreetingService {
   private static final Logger LOGGER = Logger.getLogger(GreetingServiceImpl.class);

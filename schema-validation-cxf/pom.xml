@@ -40,7 +40,7 @@
         <version>1.1.0.GA</version>
         <configuration>
           <wsdls>
-            <wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/greeting.wsdl</wsdl>
+            <wsdl>${basedir}/src/main/resources/META-INF/greeting.wsdl</wsdl>
           </wsdls>
         </configuration>
         <executions>
@@ -63,6 +63,14 @@
             </manifestEntries>
           </archive>
           <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+        </configuration>
+      </plugin>
+      <!-- runtime -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.redhat.samples.ws.GreetingServiceImpl</mainClass>
         </configuration>
       </plugin>
     </plugins>
