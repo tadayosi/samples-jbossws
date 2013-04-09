@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="GreetingServiceService" targetNamespace="http://ws.samples.redhat.com/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.samples.redhat.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types />
+  <message name="GreetingService_goodbye">
+    <part name="name" type="xsd:string" />
+  </message>
+  <message name="GreetingService_goodbyeResponse">
+    <part name="return" type="xsd:string" />
+  </message>
+  <message name="GreetingService_hello">
+    <part name="name" type="xsd:string" />
+  </message>
+  <message name="GreetingService_helloResponse">
+    <part name="return" type="xsd:string" />
+  </message>
+  <portType name="GreetingService">
+    <operation name="goodbye" parameterOrder="name">
+      <input message="tns:GreetingService_goodbye" />
+      <output message="tns:GreetingService_goodbyeResponse" />
+    </operation>
+    <operation name="hello" parameterOrder="name">
+      <input message="tns:GreetingService_hello" />
+      <output message="tns:GreetingService_helloResponse" />
+    </operation>
+  </portType>
+  <binding name="GreetingServiceBinding" type="tns:GreetingService">
+    <soap:binding style="rpc" transport="http://www.example.org/2006/06/soap/bindings/JMS/" />
+    <operation name="goodbye">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body namespace="http://ws.samples.redhat.com/" use="literal" />
+      </input>
+      <output>
+        <soap:body namespace="http://ws.samples.redhat.com/" use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body namespace="http://ws.samples.redhat.com/" use="literal" />
+      </input>
+      <output>
+        <soap:body namespace="http://ws.samples.redhat.com/" use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GreetingServiceService">
+    <port binding="tns:GreetingServiceBinding" name="GreetingServicePort">
+      <soap:address location="jms://queue/samples.ws.greeting.request?replyToName=queue/samples.ws.greeting.response" />
+    </port>
+  </service>
+</definitions>

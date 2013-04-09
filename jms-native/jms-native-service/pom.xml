@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.redhat.samples</groupId>
+    <artifactId>jms-native</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jms-native-service</artifactId>
+  <packaging>jar</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jboss-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <configuration>
+          <jbossHome>${jbossas.home}</jbossHome>
+          <serverName>default</serverName>
+          <fileNames>
+            <fileName>src/main/jbm/jbm-queue-service.xml</fileName>
+            <fileName>${project.build.directory}/${project.build.finalName}.${project.packaging}</fileName>
+          </fileNames>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-core</artifactId>
+      <version>3.1.2.SP5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.ejb</groupId>
+      <artifactId>ejb-api</artifactId>
+      <version>3.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>
