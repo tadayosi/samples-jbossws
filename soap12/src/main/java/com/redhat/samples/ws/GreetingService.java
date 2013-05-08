@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 
 @WebService
 @BindingType(SOAPBinding.SOAP12HTTP_BINDING)
+//@BindingType("http://java.sun.com/xml/ns/jaxws/2003/05/soap/bindings/HTTP/")
 public class GreetingService {
 
   private static final Logger LOGGER        = Logger.getLogger(GreetingService.class);
@@ -29,10 +30,7 @@ public class GreetingService {
 
   @WebMethod
   public String hello(@WebParam(name = "name") String name) {
-    if (StringUtils.isEmpty(name)) {
-      //throw createSOAPFaultException(FAULT_SUBCODE, FAULT_REASON);
-      throw createCXFSoapFault(FAULT_SUBCODE, FAULT_REASON);
-    }
+    if (StringUtils.isEmpty(name)) { throw createSOAPFaultException(FAULT_SUBCODE, FAULT_REASON); }
     String message = String.format("Hello, %s!", name);
     LOGGER.info(message);
     return message;
@@ -40,22 +38,20 @@ public class GreetingService {
 
   @WebMethod
   public String goodbye(@WebParam(name = "name") String name) {
-    if (StringUtils.isEmpty(name)) {
-      //throw createSOAPFaultException(FAULT_SUBCODE, FAULT_REASON);
-      throw createCXFSoapFault(FAULT_SUBCODE, FAULT_REASON);
-    }
+    if (StringUtils.isEmpty(name)) { throw createCXFSoapFault(FAULT_SUBCODE, FAULT_REASON); }
     String message = String.format("Goodbye, %s!", name);
     LOGGER.info(message);
     return message;
   }
 
-  @SuppressWarnings("unused")
   private SOAPFaultException createSOAPFaultException(String code, String reason) {
     LOGGER.info("SOAP Fault: " + reason);
     try {
       SOAPFactory factory = SOAPFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
       SOAPFault fault = factory.createFault(reason, SOAPConstants.SOAP_RECEIVER_FAULT);
-      fault.appendFaultSubcode(new QName(NS_SAMPLES, code));
+      fault.appendFaultSubcode(new QName(NS_SAMPLES, code + 1));
+      fault.appendFaultSubcode(new QName(NS_SAMPLES, code + 2));
+      fault.appendFaultSubcode(new QName(NS_SAMPLES, code + 3));
       fault.addDetail().addChildElement("message").setTextContent(reason);
       return new SOAPFaultException(fault);
     } catch (SOAPException e) {

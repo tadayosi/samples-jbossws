@@ -12,12 +12,33 @@
   <artifactId>soap12</artifactId>
   <packaging>war</packaging>
 
+  <properties>
+    <cxf.version>2.7.4</cxf.version>
+  </properties>
+
   <dependencies>
-    <dependency>
+    <!--
+      <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-client</artifactId>
       <version>4.0.6.GA</version>
       <scope>provided</scope>
+      </dependency>
+    -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http-jetty</artifactId>
+      <version>${cxf.version}</version>
     </dependency>
   </dependencies>
 
