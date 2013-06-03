@@ -40,7 +40,7 @@
         <version>1.0.0.GA</version>
         <configuration>
           <wsdls>
-            <wsdl>${basedir}/src/main/webapp/WEB-INF/wsdl/greeting.wsdl</wsdl>
+            <wsdl>${basedir}/src/main/resources/META-INF/wsdl/greeting.wsdl</wsdl>
           </wsdls>
           <catalog>${basedir}/src/main/resources/META-INF/jax-ws-catalog.xml</catalog>
         </configuration>
@@ -61,13 +61,21 @@
           <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
         </configuration>
       </plugin>
+      <!-- execution -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.redhat.samples.ws.GreetingServiceImpl</mainClass>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
   <dependencies>
     <dependency>
-      <groupId>org.jboss.ws.native</groupId>
-      <artifactId>jbossws-native-client</artifactId>
+      <groupId>org.jboss.ws.cxf</groupId>
+      <artifactId>jbossws-cxf-client</artifactId>
       <version>3.2.2.GA</version>
       <scope>compile</scope>
     </dependency>

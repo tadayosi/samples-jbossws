@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 @WebService(
     serviceName = "GreetingService",
     portName = "GreetingServicePort",
-    wsdlLocation = "/WEB-INF/wsdl/greeting.wsdl")
+    wsdlLocation = "META-INF/wsdl/greeting.wsdl")
 public class GreetingServiceImpl implements GreetingService {
   private static final Logger LOGGER = Logger.getLogger(GreetingServiceImpl.class);
 
