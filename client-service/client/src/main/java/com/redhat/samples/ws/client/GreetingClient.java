@@ -1,5 +1,6 @@
 package com.redhat.samples.ws.client;
 
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.Map;
 
@@ -20,15 +21,17 @@ public class GreetingClient {
   private static final String ENDPOINT = "http://localhost:8080/sample/greeting";
 
   public static void main(String[] args) {
-    invokeService();
+    new GreetingClient().invokeService(new PrintWriter(System.out, true));
   }
 
-  private static void invokeService() {
+  public void invokeService(PrintWriter writer) {
     GreetingService service = createService();
     String helloResponse = service.hello(GreetingClientServlet.class.getSimpleName());
     String goodbyeResponse = service.goodbye(GreetingClientServlet.class.getSimpleName());
     LOGGER.info(helloResponse);
     LOGGER.info(goodbyeResponse);
+    writer.println(helloResponse);
+    writer.println(goodbyeResponse);
   }
 
   private static GreetingService createService() {

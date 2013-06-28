@@ -13,8 +13,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>client-service-client</module>
-    <module>client-service-service</module>
+    <module>client</module>
+    <module>service</module>
   </modules>
 
 </project>
