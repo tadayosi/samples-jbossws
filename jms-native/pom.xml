@@ -13,8 +13,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>jms-native-client</module>
-    <module>jms-native-service</module>
+    <module>client</module>
+    <module>service</module>
   </modules>
 
   <dependencies>

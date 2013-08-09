@@ -13,9 +13,9 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>ssl-client</module>
-    <module>ssl-client-servlet</module>
-    <module>ssl-service</module>
+    <module>client</module>
+    <module>client-servlet</module>
+    <module>service</module>
   </modules>
 
 </project>
