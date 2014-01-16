@@ -10,12 +10,17 @@
     <name>JBoss WS Samples</name>
     <url>https://github.com/tadayosi/samples-jbossws</url>
 
+    <modules>
+        <module>ws-security-cxf</module>
+        <module>ws-security-policy</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jbossas.home>/opt/jboss-eap-5.1.2/jboss-as</jbossas.home>
-        <jbossas.version>5.1.0.GA</jbossas.version>
         <jbossas7.home>/opt/jboss-eap-6.0.0</jbossas7.home>
-        <jbossas7.version>7.1.2.Final</jbossas7.version>
+        <version.jbossws.cxf>4.2.3.Final</version.jbossws.cxf>
+        <version.cxf>2.7.7</version.cxf>
     </properties>
 
     <build>
@@ -26,8 +31,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
@@ -37,12 +42,6 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <webResources>
-                        <resource>
-                            <directory>${project.build.sourceDirectory}</directory>
-                            <targetPath>WEB-INF/src</targetPath>
-                        </resource>
-                    </webResources>
                 </configuration>
             </plugin>
             <!-- deploy -->
@@ -70,6 +69,16 @@
         </plugins>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.ws.plugins</groupId>
+                    <artifactId>maven-jaxws-tools-plugin</artifactId>
+                    <version>1.1.0.GA</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -131,6 +140,36 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.ws.cxf</groupId>
+                <artifactId>jbossws-cxf-client</artifactId>
+                <version>${version.jbossws.cxf}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${version.cxf}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>${version.cxf}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>${version.cxf}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-ws-security</artifactId>
+                <version>${version.cxf}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <repositories>
         <repository>
