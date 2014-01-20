@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:jaxws="http://cxf.apache.org/jaxws"
-  xsi:schemaLocation="
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xsi:schemaLocation="
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
     http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-  <!-- For EAP 5 (CXF 2.2.x) -->
+    <!-- For EAP 5 (CXF 2.2.x) -->
 
-  <jaxws:endpoint id="Greeting" implementor="com.redhat.samples.ws.GreetingServiceImpl" address="/sample/greeting"
-    wsdlLocation="classpath:/META-INF/greeting.wsdl">
-    <jaxws:invoker>
-      <bean class="org.jboss.wsf.stack.cxf.InvokerJSE" />
-    </jaxws:invoker>
-    <jaxws:properties>
-      <entry key="schema-validation-enabled" value="true" />
-    </jaxws:properties>
-  </jaxws:endpoint>
+    <jaxws:endpoint id="Greeting" implementor="com.redhat.samples.ws.GreetingServiceImpl" address="/sample/greeting"
+        wsdlLocation="classpath:/META-INF/greeting.wsdl">
+        <jaxws:invoker>
+            <bean class="org.jboss.wsf.stack.cxf.InvokerJSE" />
+        </jaxws:invoker>
+        <jaxws:properties>
+            <entry key="schema-validation-enabled" value="true" />
+        </jaxws:properties>
+    </jaxws:endpoint>
 
 </beans>
