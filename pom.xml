@@ -11,6 +11,7 @@
     <url>https://github.com/tadayosi/samples-jbossws</url>
 
     <modules>
+        <module>schema-validation-cxf</module>
         <module>ws-security-cxf</module>
         <module>ws-security-policy</module>
     </modules>
