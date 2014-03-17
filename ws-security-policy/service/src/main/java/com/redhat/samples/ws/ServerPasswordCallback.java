@@ -23,4 +23,5 @@ public class ServerPasswordCallback implements CallbackHandler {
             callback.setPassword(PASSWORD);
         }
     }
+
 }

@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 
 @WebService
 public class GreetingService {
+
     private static final Logger LOGGER = Logger.getLogger(GreetingService.class);
 
     @WebMethod

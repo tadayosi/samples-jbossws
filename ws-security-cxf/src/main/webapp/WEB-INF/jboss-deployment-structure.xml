@@ -4,6 +4,7 @@
         <dependencies>
             <module name="org.apache.cxf" />
             <module name="org.apache.ws.security" />
+            <module name="org.springframework.spring" export="true" meta-inf="export" />
         </dependencies>
     </deployment>
 </jboss-deployment-structure>
