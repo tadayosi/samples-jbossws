@@ -52,13 +52,6 @@
                 <dependencies>
                 </dependencies>
             </plugin>
-            <!-- package -->
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
-                </configuration>
-            </plugin>
             <!-- execute -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -75,7 +68,22 @@
         <dependency>
             <groupId>org.jboss.ws.cxf</groupId>
             <artifactId>jbossws-cxf-client</artifactId>
-            <scope>compile</scope>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-rm</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

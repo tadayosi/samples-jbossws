@@ -43,7 +43,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-ws-security</artifactId>
+            <artifactId>cxf-rt-ws-rm</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
