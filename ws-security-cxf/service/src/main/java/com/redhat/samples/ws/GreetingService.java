@@ -7,7 +7,7 @@ import javax.xml.ws.Endpoint;
 
 import org.apache.log4j.Logger;
 
-@WebService
+@WebService(serviceName = "GreetingService", portName = "GreetingServicePort")
 public class GreetingService {
 
     private static final Logger LOGGER = Logger.getLogger(GreetingService.class);

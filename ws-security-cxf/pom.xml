@@ -10,26 +10,11 @@
     </parent>
 
     <artifactId>samples-jbossws-ws-security-cxf</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.redhat.samples.ws.GreetingService</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.jboss.ws.cxf</groupId>
-            <artifactId>jbossws-cxf-client</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>client</module>
+        <module>service</module>
+    </modules>
 
 </project>

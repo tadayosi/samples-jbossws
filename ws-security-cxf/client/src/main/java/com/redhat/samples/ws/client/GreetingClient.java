@@ -8,7 +8,6 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
 
-import org.apache.cxf.ws.security.SecurityConstants;
 import org.apache.log4j.Logger;
 
 import com.redhat.samples.ws.GreetingService;
@@ -21,9 +20,6 @@ public class GreetingClient {
     private static final QName SERVICE = new QName("http://ws.samples.redhat.com/", "GreetingService");
     //private static final String ENDPOINT = "http://localhost:18080/greeting";
     private static final String ENDPOINT = "http://localhost:8080/sample/greeting";
-
-    private static final String USERNAME = "kermit";
-    private static final String PASSWORD = "thefrog";
 
     public static void main(String[] args) {
         new GreetingClient().invokeService(GreetingClient.class.getSimpleName(), new PrintWriter(System.out, true));
@@ -43,8 +39,6 @@ public class GreetingClient {
         GreetingService service = Service.create(WSDL, SERVICE).getPort(GreetingService.class);
         Map<String, Object> context = ((BindingProvider) service).getRequestContext();
         context.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, ENDPOINT);
-        context.put(SecurityConstants.USERNAME, USERNAME);
-        context.put(SecurityConstants.PASSWORD, PASSWORD);
         return service;
     }
 
