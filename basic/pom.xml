@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>basic</artifactId>
+  <artifactId>samples-jbossws-basic</artifactId>
   <packaging>war</packaging>
 
   <build>

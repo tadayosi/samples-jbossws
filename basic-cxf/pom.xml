@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>basic-cxf</artifactId>
+  <artifactId>samples-jbossws-basic-cxf</artifactId>
   <packaging>war</packaging>
 
   <properties>

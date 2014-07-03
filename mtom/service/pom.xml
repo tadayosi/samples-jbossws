@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>mtom-service</artifactId>
+  <artifactId>samples-jbossws-mtom-service</artifactId>
   <packaging>war</packaging>
 
   <build>

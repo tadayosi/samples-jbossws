@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>jms-native</artifactId>
+  <artifactId>samples-jbossws-jms-native</artifactId>
   <packaging>pom</packaging>
 
   <modules>

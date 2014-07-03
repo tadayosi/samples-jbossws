@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>client-service</artifactId>
+  <artifactId>samples-jbossws-client-service</artifactId>
   <packaging>pom</packaging>
 
   <modules>

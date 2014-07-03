@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>mtom</artifactId>
+  <artifactId>samples-jbossws-mtom</artifactId>
   <packaging>pom</packaging>
 
   <modules>

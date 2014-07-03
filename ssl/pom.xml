@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ssl</artifactId>
+  <artifactId>samples-jbossws-ssl</artifactId>
   <packaging>pom</packaging>
 
   <modules>

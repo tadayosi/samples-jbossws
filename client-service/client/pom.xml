@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>client-service-client</artifactId>
+  <artifactId>samples-jbossws-client-service-client</artifactId>
   <packaging>war</packaging>
 
   <build>

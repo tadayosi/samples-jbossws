@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>jms-native-client</artifactId>
+  <artifactId>samples-jbossws-jms-native-client</artifactId>
   <packaging>jar</packaging>
 
   <build>

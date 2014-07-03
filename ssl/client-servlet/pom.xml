@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>ssl-client-servlet</artifactId>
+  <artifactId>samples-jbossws-ssl-client-servlet</artifactId>
   <packaging>war</packaging>
 
   <build>

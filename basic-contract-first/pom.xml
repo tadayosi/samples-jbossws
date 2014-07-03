@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>basic-contract-first</artifactId>
+    <artifactId>samples-jbossws-basic-contract-first</artifactId>
     <packaging>war</packaging>
 
     <build>

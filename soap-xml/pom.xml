@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>soap-xml</artifactId>
+  <artifactId>samples-jbossws-soap-xml</artifactId>
   <packaging>war</packaging>
 
   <build>

@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>wsdl</artifactId>
+  <artifactId>samples-jbossws-wsdl</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>
