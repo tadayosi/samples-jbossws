@@ -11,8 +11,11 @@
     <url>https://github.com/tadayosi/samples-jbossws</url>
 
     <modules>
+        <module>basic</module>
         <module>basic-contract-first</module>
+        <module>basic-cxf</module>
         <module>schema-validation-cxf</module>
+        <module>security-basic</module>
         <module>ws-rm</module>
         <module>ws-security-cxf</module>
         <module>ws-security-policy</module>
@@ -100,6 +103,11 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging-api</artifactId>
