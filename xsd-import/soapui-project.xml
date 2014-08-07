@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project activeEnvironment="Default" name="xsd-import" soapui-version="4.6.2" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project activeEnvironment="Default" name="xsd-import" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
   
   <con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="GreetingServiceSoapBinding-jboss" type="wsdl" bindingName="{http://ws.samples.redhat.com/}GreetingServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/sample/greeting?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/sample/greeting?wsdl"><con:part><con:url>http://localhost:8080/sample/greeting?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GreetingService" targetNamespace="http://ws.samples.redhat.com/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.samples.redhat.com/" xmlns:types="http://ws.samples.redhat.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -194,4 +194,4 @@
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.samples.redhat.com/GreetingService/hello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/>
   <con:wssContainer/>
-</con:soapui-project>
+<con:oAuth2ProfileContainer/></con:soapui-project>
