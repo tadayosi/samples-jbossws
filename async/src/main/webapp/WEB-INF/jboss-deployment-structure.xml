@@ -3,6 +3,7 @@
   <deployment>
     <dependencies>
       <module name="org.apache.cxf" />
+      <module name="org.apache.cxf.impl" />
     </dependencies>
   </deployment>
 </jboss-deployment-structure>
