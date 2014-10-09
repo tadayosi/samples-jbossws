@@ -14,31 +14,34 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
 import org.apache.log4j.Logger;
 
 public class HttpHeadersHandler implements SOAPHandler<SOAPMessageContext> {
-  private static final Logger LOGGER = Logger.getLogger(HttpHeadersHandler.class);
 
-  @Override
-  public boolean handleMessage(SOAPMessageContext context) {
-    LOGGER.info("Attaching HTTP headers to response");
-    @SuppressWarnings("unchecked")
-    Map<String, List<String>> headers = (Map<String, List<String>>) context.get(MessageContext.HTTP_RESPONSE_HEADERS);
-    if (headers == null) {
-      headers = new HashMap<String, List<String>>();
-      context.put(MessageContext.HTTP_RESPONSE_HEADERS, headers);
+    private static final Logger LOGGER = Logger.getLogger(HttpHeadersHandler.class);
+
+    @Override
+    public boolean handleMessage(SOAPMessageContext context) {
+        LOGGER.info("Attaching HTTP headers to response");
+        @SuppressWarnings("unchecked")
+        Map<String, List<String>> headers = (Map<String, List<String>>) context
+                .get(MessageContext.HTTP_RESPONSE_HEADERS);
+        if (headers == null) {
+            headers = new HashMap<String, List<String>>();
+            context.put(MessageContext.HTTP_RESPONSE_HEADERS, headers);
+        }
+        headers.put("Custom-Header", Arrays.asList("XXXXX"));
+        return true;
     }
-    headers.put("Custom-Header", Arrays.asList("XXXXX"));
-    return true;
-  }
 
-  @Override
-  public boolean handleFault(SOAPMessageContext context) {
-    return true;
-  }
+    @Override
+    public boolean handleFault(SOAPMessageContext context) {
+        return true;
+    }
 
-  @Override
-  public void close(MessageContext context) {}
+    @Override
+    public void close(MessageContext context) {}
 
-  @Override
-  public Set<QName> getHeaders() {
-    return null;
-  }
+    @Override
+    public Set<QName> getHeaders() {
+        return null;
+    }
+
 }

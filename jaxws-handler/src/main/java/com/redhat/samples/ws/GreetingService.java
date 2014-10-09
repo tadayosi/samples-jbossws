@@ -11,28 +11,30 @@ import org.apache.log4j.Logger;
 @WebService
 @HandlerChain(file = "/META-INF/handler-chain.xml")
 public class GreetingService {
-  private static final Logger LOGGER = Logger.getLogger(GreetingService.class);
 
-  @WebMethod
-  public String hello(@WebParam(name = "name") String name) {
-    String message = String.format("Hello, %s!", name);
-    LOGGER.info(message);
-    return message;
-  }
+    private static final Logger LOGGER = Logger.getLogger(GreetingService.class);
 
-  @WebMethod
-  public String goodbye(@WebParam(name = "name") String name) {
-    String message = String.format("Goodbye, %s!", name);
-    LOGGER.info(message);
-    return message;
-  }
-
-  public static void main(String[] args) {
-    try {
-      Endpoint.publish("http://localhost:18080/greeting", new GreetingService());
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.exit(1);
+    @WebMethod
+    public String hello(@WebParam(name = "name") String name) {
+        String message = String.format("Hello, %s!", name);
+        LOGGER.info(message);
+        return message;
     }
-  }
+
+    @WebMethod
+    public String goodbye(@WebParam(name = "name") String name) {
+        String message = String.format("Goodbye, %s!", name);
+        LOGGER.info(message);
+        return message;
+    }
+
+    public static void main(String[] args) {
+        try {
+            Endpoint.publish("http://localhost:18080/greeting", new GreetingService());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
 }
