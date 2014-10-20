@@ -5,7 +5,7 @@
 
   <parent>
     <groupId>com.redhat.samples.ws</groupId>
-    <artifactId>client-service</artifactId>
+    <artifactId>samples-jbossws-client-service</artifactId>
     <version>1.0</version>
   </parent>
 
@@ -19,7 +19,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.7</version>
         <executions>
           <execution>
             <id>add-source</id>
@@ -38,7 +37,6 @@
       <plugin>
         <groupId>org.jboss.ws.plugins</groupId>
         <artifactId>maven-jaxws-tools-plugin</artifactId>
-        <version>1.1.0.GA</version>
         <configuration>
           <wsdls>
             <wsdl>${basedir}/src/main/resources/META-INF/greeting.wsdl</wsdl>
@@ -76,7 +74,6 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-client</artifactId>
-      <version>4.0.6.GA</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

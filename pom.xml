@@ -15,6 +15,7 @@
         <module>basic</module>
         <module>basic-contract-first</module>
         <module>basic-cxf</module>
+        <module>client-service</module>
         <module>schema-validation-cxf</module>
         <module>security-basic</module>
         <module>ws-rm</module>
