@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class GreetingClientServlet extends HttpServlet {
 
-  @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    new GreetingClient().invokeService(response.getWriter());
-  }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        new GreetingClient().invokeService(response.getWriter());
+    }
 
 }
