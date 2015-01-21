@@ -5,7 +5,7 @@
 
   <parent>
     <groupId>com.redhat.samples.ws</groupId>
-    <artifactId>mtom</artifactId>
+    <artifactId>samples-jbossws-mtom</artifactId>
     <version>1.0</version>
   </parent>
 
@@ -29,7 +29,7 @@
   <dependencies>
     <dependency>
       <groupId>com.redhat.samples.ws</groupId>
-      <artifactId>mtom-service</artifactId>
+      <artifactId>samples-jbossws-mtom-service</artifactId>
       <version>${project.version}</version>
       <classifier>classes</classifier>
     </dependency>
