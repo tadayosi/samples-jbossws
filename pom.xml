@@ -18,6 +18,7 @@
         <module>client-service</module>
         <module>schema-validation-cxf</module>
         <module>security-basic</module>
+        <module>soap-header</module>
         <module>ws-rm</module>
         <module>ws-security-cxf</module>
         <module>ws-security-policy</module>
