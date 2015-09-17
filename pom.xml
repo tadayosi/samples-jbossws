@@ -22,6 +22,7 @@
         <module>ws-rm</module>
         <module>ws-security-cxf</module>
         <module>ws-security-policy</module>
+        <module>wsdl</module>
     </modules>
 
     <properties>
